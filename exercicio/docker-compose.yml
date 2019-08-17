@@ -1,12 +1,13 @@
 version: '3'
 
-services: 
+services:
   app:
     build: .
     ports:
       - 8000:80
     links:
       - db
+    volumes:
+      - ./:/code
   db:
     image: mysql:latest
-    

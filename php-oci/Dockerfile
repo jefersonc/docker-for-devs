@@ -23,8 +23,5 @@ RUN apk add make php7-pear php7-dev gcc musl-dev libnsl libaio &&\
   apk del php7-pear php7-dev gcc musl-dev &&\
   rm -rf /tmp/*.zip /var/cache/apk/* /tmp/pear/
 
-RUN php -v && php --ini && php -m
-
-ENTRYPOINT ["docker-php-entrypoint"]
-
-CMD ["php", "-a"]
+EXPOSE 9000
+CMD ["php-fpm"]
